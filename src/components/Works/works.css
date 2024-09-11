@@ -1,56 +1,143 @@
-#works{
+#works {
     min-height: calc(100vh - 5rem);
-    width: 100vw;
-    max-width: 60vw;
+    width: 100%;
+    max-width: 80vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     text-align: center;
-    padding: 0 2rem;
+    padding: 2rem 1rem;
+    position: relative; /* Ensure relative positioning */
+    z-index: 1; /* Ensure it is above other elements */
+}
+h2{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.worksTitle {
+    margin: 1rem 0;
+    font-size: 3rem;
+    color: #333;
+    font-weight: 700;
+    z-index: 2; /* Ensure it is above other elements */
 }
 
-.worksTitle {
- margin: 1rem 0;
- font-size: 3rem;
-}
-.workDesc {
+.worksDesc {
     font-size: 1.5rem;
     font-weight: 300;
     margin: 1rem 0;
     max-width: 45rem;
+    color: #666;
+    z-index: 2; /* Ensure it is above other elements */
 }
-.workImgs{
+
+.workImgs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+    gap: 2rem;
+    width: 100%;
+    max-width: 70rem;
+    margin: 2rem 0;
+}
+
+.workCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 1rem 0;
-    width: 100vw;
-    max-width: 65rem;
 }
-.workImg{
-    object-fit: cover;
-    height: 20rem;
-    width: 15rem;
-    margin: 0.5rem;
+
+.workCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
-.workBtn{
+
+.workImg {
+    object-fit: contain;
+    height: auto;
+    width: 100%;
+    max-height: 20rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.workCardText {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+}
+
+.workCardText p {
+    margin: 0.5rem 0 0;
+}
+
+.workCard:hover .workCardText {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.workBtn {
     margin: 3rem 0;
-    padding: 0.5rem 2.5rem;
+    padding: 0.75rem 3rem;
     border: none;
     border-radius: 2rem;
-    background:white;
-    font-size: 1rem;
+    background: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-@media screen and (min-width: 585px) {
-    .workImg{
-        height: 45vw;
-        width: 20rem;
+
+.workBtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@media screen and (min-width: 768px) {
+    .workImg {
+        max-height: 25rem;
     }
-    .workBtn{
+    .workBtn {
         font-size: 1.5rem;
     }
-    
+}
+
+@media screen and (max-width: 768px) {
+    .worksTitle {
+        font-size: 2.5rem;
+    }
+    .worksDesc {
+        font-size: 1.25rem;
+    }
+    .workImg {
+        max-height: 15rem;
+    }
+    .workBtn {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .worksTitle {
+        font-size: 2rem;
+    }
+    .worksDesc {
+        font-size: 1rem;
+    }
+    .workImg {
+        max-height: 12rem;
+    }
+    .workBtn {
+        font-size: 1rem;
+    }
 }

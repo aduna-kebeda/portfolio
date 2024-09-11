@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './contact.css';  
-import Walmart from '../../assets/walmart.png';
-import Adobe from '../../assets/adobe.png';
-import Microsoft from '../../assets/microsoft1.png';
-import Facebook from '../../assets/facebook.png';
+import Safaricom from '../../assets/safari.png';
+import Telecom from '../../assets/tele.jpg';
+import A2sv from '../../assets/a2sv.jpg';
+import Insa from '../../assets/insa.png';
 import FacebookIcon from '../../assets/facebook-icon.png';
 import Twitter from '../../assets/twitter.png';
 import Instagram from '../../assets/instagram.png';
@@ -37,10 +37,10 @@ const Contact = () => {
                 <h1 className='contactPageTitle'>My clients</h1>
                 <p className='clientDesc'>Here's what my clients say about our collaboration. Interested in working together? Reach out below!</p>   
                 <div className='clientImgs'>
-                    <img src={Walmart} alt='Client' className='clientImg'/>
-                    <img src={Adobe} alt='Client' className='clientImg'/>
-                    <img src={Microsoft} alt='Client' className='clientImg'/>
-                    <img src={Facebook} alt='Client' className='clientImg'/>
+                    <img src={Safaricom} alt='Client' className='clientImg'/>
+                    <img src={Telecom} alt='Client' className='clientImg'/>
+                    <img src={A2sv} alt='Client' className='clientImg'/>
+                    <img src={Insa} alt='Client' className='clientImg'/>
                 </div> 
             </div>
             <div id='contact'>
